@@ -6,15 +6,18 @@ class Morris.Area extends Morris.Line
     behaveLikeLine: false
 
   constructor: (options) ->
-    return new Morris.Area(options) unless (@ instanceof Morris.Area)
+    # Start with a base options object
     areaOptions = $.extend {}, areaDefaults, options
 
-    @cumulative = not areaOptions.behaveLikeLine
-
+    # Modify areaOptions as needed BEFORE passing to super
     if areaOptions.fillOpacity is 'auto'
       areaOptions.fillOpacity = if areaOptions.behaveLikeLine then .8 else 1
 
-    super(areaOptions)
+    # Call super with the fully prepared options
+    super(areaOptions) 
+
+    # Now assignments to '@' (this) are allowed
+    @cumulative = not areaOptions.behaveLikeLine
 
   # calculate series data point coordinates
   #

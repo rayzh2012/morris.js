@@ -30,7 +30,8 @@ class Morris.Donut extends Morris.EventEmitter
   # Create and render a donut chart.
   #
   constructor: (options) ->
-    return new Morris.Donut(options) unless (@ instanceof Morris.Donut)
+    super()
+    # The factory line "return new Morris.Donut(options) unless (@ instanceof Morris.Donut)" has been removed.
     @options = $.extend {}, @defaults, options
 
     if typeof options.element is 'string'
@@ -147,7 +148,21 @@ class Morris.Donut extends Morris.EventEmitter
 #
 # @private
 class Morris.DonutSegment extends Morris.EventEmitter
-  constructor: (@cx, @cy, @inner, @outer, p0, p1, @color, @backgroundColor, @index, @raphael) ->
+  constructor: (cx, cy, inner, outer, p0, p1, color, backgroundColor, index, raphael) ->
+    super() # Call super first
+
+    # Manually assign parameters to instance variables
+    @cx = cx
+    @cy = cy
+    @inner = inner
+    @outer = outer
+    # p0 and p1 are used directly, not typically assigned as @p0, @p1 unless needed elsewhere
+    @color = color
+    @backgroundColor = backgroundColor
+    @index = index
+    @raphael = raphael
+
+    # Original logic using p0, p1 and the now-assigned instance variables
     @sin_p0 = Math.sin(p0)
     @cos_p0 = Math.cos(p0)
     @sin_p1 = Math.sin(p1)

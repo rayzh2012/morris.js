@@ -4,6 +4,7 @@ class Morris.Grid extends Morris.EventEmitter
   # Draws grid lines and axis labels.
   #
   constructor: (options) ->
+    super()
     # find the container to draw the graph in
     if typeof options.element is 'string'
       @el = $ document.getElementById(options.element)

@@ -2,7 +2,6 @@ class Morris.Line extends Morris.Grid
   # Initialise the graph.
   #
   constructor: (options) ->
-    return new Morris.Line(options) unless (@ instanceof Morris.Line)
     super(options)
 
   init: ->

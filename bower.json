@@ -5,14 +5,14 @@
     "./morris.css"
   ],
   "dependencies": {
-    "jquery": ">= 1.7.0",
-    "raphael": ">= 2.0"
+    "jquery": ">=3.7.1",
+    "raphael": ">=2.3.0"
   },
   "devDependencies": {
-    "mocha": "~1.17.1",
-    "chai": "~1.9.0",
-    "chai-jquery": "~1.2.1",
-    "sinon": "http://sinonjs.org/releases/sinon-1.8.1.js",
-    "sinon-chai": "~2.5.0"
+    "mocha": "~11.4.0",
+    "chai": "~5.2.0",
+    "chai-jquery": "~2.1.0",
+    "sinon": "~20.0.0",
+    "sinon-chai": "~4.0.0"
   }
 }
